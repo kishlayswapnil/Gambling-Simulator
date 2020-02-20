@@ -5,6 +5,7 @@ echo Welcome to Gambling game.
 STAKE=100
 BET=1
 WIN=1
+#Logic for days and win loss check.
 for(( day=1; day<=20; day++ ))
 do
 	#Varriables declared.
@@ -22,7 +23,11 @@ do
 			echo loss
 			((money--))
 		fi
+		total=$(($money-$STAKE))
 	done
 	totalPossibility[day]=$money
+	dayWinLoose[day]=$total
 done
+#Displaying results.
 echo "Total possibilities of win and loss is -: "${totalPossibility[@]}
+echo "Days won and Loss by -: "${dayWinLoose[@]}
