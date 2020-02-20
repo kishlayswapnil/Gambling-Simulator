@@ -5,11 +5,6 @@ echo Welcome to Gambling game.
 STAKE=100
 BET=1
 WIN=1
-#Varriables declared.
-money=$STAKE
-minimumStake=$(($STAKE-$STAKE/2))
-maximumStake=$(($STAKE+$STAKE/2))
-
 for(( day=1; day<=20; day++ ))
 do
 	#Varriables declared.
