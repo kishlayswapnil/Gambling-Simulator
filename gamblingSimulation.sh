@@ -1,16 +1,24 @@
 #!/bin/bash -x
 echo Welcome to Gambling game.
 
-stake=100
-money=$stake
-bet=1
-random=$((RANDOM%2))
-if (( random==bet ))
-then
-	echo win
-	((money++))
-else
-	echo loose
-	((money--))
-fi
-echo $money
+#Constatns declared
+STAKE=100
+BET=1
+WIN=1
+#Varriables declared.
+money=$STAKE
+minimumStake=$(($STAKE-$STAKE/2))
+maximumStake=$(($STAKE+$STAKE/2))
+
+while (( $money != $minimumStake && $money != $maximumStake ))
+do
+	random=$((RANDOM%2))
+	if (( random==WIN ))
+	then
+		echo win
+		((money++))
+	else
+		echo loose
+		((money--))
+	fi
+done
